@@ -1,6 +1,7 @@
 import 'dotenv/config';
 import http from 'http';
 import path from 'path';
+import { fileURLToPath } from 'url';
 import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
@@ -14,6 +15,8 @@ import messageRouter from './routes/messageRouter.js';
 import { ExpressPeerServer } from 'peer';
 import { Server } from 'socket.io';
 const app = express();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 app.use(express.json());
 app.use(cors());
 const httpServer = http.createServer(app);
