@@ -33,6 +33,8 @@ const url = process.env.MONGO_URL;
 mongoose.connect(
   url,
   {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
     autoIndex: false,
     serverSelectionTimeoutMS: 5000,
     socketTimeoutMS: 45000,
